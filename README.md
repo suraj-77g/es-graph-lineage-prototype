@@ -16,24 +16,20 @@ docker-compose up -d
 
 2. Build the Project
    Compile the Java code and package it into an executable JAR file.
-
-mvn clean package
+   mvn clean package
 
 3. Index Sample Data
    Use the index command to generate and load data.
+   Syntax: java -jar ... index <num_nodes> <num_edges>
 
-Syntax: java -jar ... index <num_nodes> <num_edges>
-
-Example: Create a graph with 200,000 nodes and 1,000,000 unique edges
-java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar index 200000 1000000
+   Example: Create a graph with 200,000 nodes and 1,000,000 unique edges
+   java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar index 200000 1000000
 
 4. Run a Lineage Query
    Use the query command to perform a graph traversal.
-
-Syntax: java -jar ... query <start_urn> <depth>
-
-Example: Find a 3-hop downstream lineage starting from 'urn:node:123'
-java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar query urn:node:123 3
+   Syntax: java -jar ... query <start_urn> <depth>
+   Example: Find a 3-hop downstream lineage starting from 'urn:node:123'
+   java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar query urn:node:123 3
 
 Troubleshooting
 If Elasticsearch fails to start with a data path is not compatible error, it means an old Docker volume from a different ES version exists. To fix this:
