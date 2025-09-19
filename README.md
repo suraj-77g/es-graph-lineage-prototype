@@ -11,8 +11,7 @@ Docker & Docker Compose
 ### Quickstart
 1. Start Elasticsearch
    Run the provided Elasticsearch 7.17.14 container.
-
-docker-compose up -d
+   docker-compose up -d
 
 2. Build the Project
    Compile the Java code and package it into an executable JAR file.
