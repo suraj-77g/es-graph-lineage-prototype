@@ -1,0 +1,16 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.14
+    container_name: es-graph-prototype
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false # Disabling security for local prototype ease-of-use
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g" # Allocate 1GB of heap, adjust if needed
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+volumes:
+  esdata:
+    driver: local
