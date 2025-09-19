@@ -24,7 +24,7 @@ mvn clean package
 
 Syntax: java -jar ... index <num_nodes> <num_edges>
 
-# Example: Create a graph with 200,000 nodes and 1,000,000 unique edges
+Example: Create a graph with 200,000 nodes and 1,000,000 unique edges
 java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar index 200000 1000000
 
 4. Run a Lineage Query
@@ -32,7 +32,7 @@ java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar index 200000 100000
 
 Syntax: java -jar ... query <start_urn> <depth>
 
-# Example: Find a 3-hop downstream lineage starting from 'urn:node:123'
+Example: Find a 3-hop downstream lineage starting from 'urn:node:123'
 java -jar target/es-graph-lineage-prototype-1.0-SNAPSHOT.jar query urn:node:123 3
 
 Troubleshooting
